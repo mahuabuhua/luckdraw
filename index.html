@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <!-- 玩法释义 -->
-                <div v-if="false" class="card-desc">
+                <div v-if="true" class="card-desc">
                     任意一个“我的号码”与“中奖号码”相同，即可获得该对应的奖金；
                     如果刮出号码“10”并且该行有中奖号码，即可获得该行对应奖金的10倍.   
                 </div>
@@ -108,7 +108,7 @@
                     defaultSize: 12,
                     canvas: null,
                     loading: true,
-                    
+
                 };
             },
             created() {
@@ -123,7 +123,7 @@
                         const rowTotal = rowIndex > 6 ? 8 : rowIndex + 1
                         for (let i = 0; i < rowTotal; i++) {
                             let num = this.createRandomNum();
-                            if (num == this.awardNum) {
+                            if (num == this.awardNum||num ==10) {
                                 row.unshift(num * 1 + 1)
                             } else {
                                 row.unshift(num)
